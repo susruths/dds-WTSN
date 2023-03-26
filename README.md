@@ -29,7 +29,7 @@ Fortunately, if we link the safety-critical DDS topic `/command` to a TSN stream
 Furthermore, we can de-burst the interference traffic using the TSN's protocol
 [IEEE 802.1Qav Credit-Based Shaper (`CBS`)](https://en.wikipedia.org/wiki/Time-Sensitive_Networking#AVB_credit-based_scheduler) to ensure its egress bandwidth is limited.
 
-<p align="center"><img src="images/intel-dds-wtsn-demo.png" alt="demo layout" width="700" class="center"/></p>
+<p align="center"><img src="images/intel-dds-wtsn-demo2.png" alt="demo layout" width="700" class="center"/></p>
 
 
 The DDS-TSN mapping demo instructions below leverage the DDS XML profiles for [Connext DDS](dds_tsn_demo/src/dds_tsn_profile_connext.xml) and [Fast DDS](dds_tsn_demo/src/dds_tsn_profile_fastdds.xml). The XML files bind the DDS communication sockets to the VLAN interface, which has a built-in VLAN tagging rule assigning the outgoing traffic a higher priority, as we describe in configuration `Option A`. Another option is to map the DSCP/TOS filed in the IP header to the VLAN PCP value, which we describe in configuration `Option B`.
