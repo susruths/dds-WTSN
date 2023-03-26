@@ -4,6 +4,6 @@ Version:                   1.2
 Outgoing License:          Apache-2.0
 License File:              LICENSE
 Type of content:           Source code
-Description and comments:  Example project of DDS-WTSN integration
+Description and comments:  Example project of DDS-WTSN  integration
 Release Location:          GitHub
 Origin:                    Code written by NXP
