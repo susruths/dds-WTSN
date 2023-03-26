@@ -18,16 +18,8 @@ The demo video below shows the challenging [moose test](https://en.wikipedia.org
 ##https://user-images.githubusercontent.com/88086083/140656406-81919e7b-8d37-4a7a-a331-be7cd32f6673.mp4
 TODO: Demo Video
 
-As illustrated below, this demo uses three machines connected to a TSN Ethernet switch, imitating a robot sharing Ethernet links for streams with different criticality levels.
-The components in grey are used for performance measurement, which we descrbe in deatail in the measurement section below.
-`Machine C` runs the Gazebo simulation. The control of the modeled vehicle runs on an embedded controller `machine A` and publishes the safety-critical topic `/command` based on the data from the `/odometry` topic.
-An interference `machine B` floods the egress of `port 3` and interfere with the control traffic in the `/command` topic.
-This interference is likely to trigger a collision in the simulation.
-Interference may originate from a bug in `machine B`, see the bug icon, or from a network design sharing an Ethernet link between traffic streams with different criticality levels, see the fire icon.
-Fortunately, if we link the safety-critical DDS topic `/command` to a TSN stream with a high priority using
-[IEEE 802.1Q Priority-Based Scheduling (`PBS`)](https://en.wikipedia.org/wiki/Time-Sensitive_Networking#Scheduling_and_traffic_shaping), then the vehicle completes the moose test successfully.
-Furthermore, we can de-burst the interference traffic using the TSN's protocol
-[IEEE 802.1Qav Credit-Based Shaper (`CBS`)](https://en.wikipedia.org/wiki/Time-Sensitive_Networking#AVB_credit-based_scheduler) to ensure its egress bandwidth is limited.
+As illustrated below, this testbed uses four machines connected together by a wired wireless TSN network, imitating a robot sharing a heterogenous TSN link for streams with different criticality levels. The components in grey are used for performance measurement, which we descrbe in deatail in the measurement section below. Machine D runs the Gazebo simulation. The control of the modeled vehicle runs on a Intel NUC machine A equiped with Intel AX210 WTSN stack and publishes the safety-critical topic /command based on the data from the /odometry topic. An interference machine B floods wireless and wored network and interfere with the control traffic in the /command topic. This interference is likely to trigger a collision in the simulation. Interference may originate from a bug in machine B or from a network design sharing a link between traffic streams with different criticality levels. Fortunately, if we link the safety-critical DDS topic /command to a TSN stream with a high priority using IEEE 802.1Q Priority-Based Scheduling (802.1Qbv), then the vehicle completes the moose test successfully. Furthermore, we can de-burst the interference traffic using the TSN's protocol IEEE 802.1Qav Credit-Based Shaper (CBS) to ensure its egress bandwidth is limited.
+
 
 <p align="center"><img src="images/intel-dds-wtsn-demo2.png" alt="demo layout" width="700" class="center"/></p>
 
