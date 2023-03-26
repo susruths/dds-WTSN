@@ -14,7 +14,8 @@ The demo video below shows the challenging [moose test](https://en.wikipedia.org
 1. collisions due to network interference without TSN features,
 1. TSN features enable a successful drive with network interference.
 
-https://user-images.githubusercontent.com/88086083/140656406-81919e7b-8d37-4a7a-a331-be7cd32f6673.mp4
+##https://user-images.githubusercontent.com/88086083/140656406-81919e7b-8d37-4a7a-a331-be7cd32f6673.mp4
+TODO: Demo Video
 
 As illustrated below, this demo uses three machines connected to a TSN Ethernet switch, imitating a robot sharing Ethernet links for streams with different criticality levels.
 The components in grey are used for performance measurement, which we descrbe in deatail in the measurement section below.
